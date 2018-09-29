@@ -92,7 +92,10 @@ class CadastroActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext , "Usuário cadastrado!", Toast.LENGTH_LONG).show()
                     }
                     this.finish()
-                } else {
+                }else{
+                    runOnUiThread {
+                    Toast.makeText(this, "Email já cadastrado!", Toast.LENGTH_LONG).show()
+                    }
                 }
 
             } catch (e: Exception) {
