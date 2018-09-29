@@ -1,7 +1,8 @@
-package com.anhanguera.foodshopping
+package com.anhanguera.foodshopping.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.anhanguera.foodshopping.R
 
 class SelectShopping : AppCompatActivity() {
 

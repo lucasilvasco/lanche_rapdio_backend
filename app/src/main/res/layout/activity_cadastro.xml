@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroActivity">
+    tools:context="com.anhanguera.foodshopping.activity.CadastroActivity">
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,21 +15,56 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="CADASTRO"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:id="@+id/tvNameUser"
-            android:text="NOME"/>
+            android:text="NOME *"/>
 
         <EditText style="@style/Base.Widget.AppCompat.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_edittext"
             android:id="@+id/edNameUser"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/tvCpfUser"
+            android:text="CPF *"/>
+
+        <EditText style="@style/Base.Widget.AppCompat.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="number"
+            android:id="@+id/edCpfUser"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/tvPhoneUser"
+            android:text="Telefone *"/>
+
+        <EditText style="@style/Base.Widget.AppCompat.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="number"
+            android:id="@+id/edPhoneUser"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:id="@+id/tvEmailUser"
-            android:text="E-MAIL"/>
+            android:text="E-MAIL *"/>
 
         <EditText style="@style/Base.Widget.AppCompat.EditText"
             android:layout_width="match_parent"
@@ -42,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:id="@+id/tvPasswordUser"
-            android:text="SENHA"/>
+            android:text="SENHA *"/>
 
         <EditText style="@style/Base.Widget.AppCompat.EditText"
             android:layout_width="match_parent"
@@ -58,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:id="@+id/tvConfirmePasswordUser"
-            android:text="CONFIRME A SENHA"/>
+            android:text="CONFIRME A SENHA *"/>
 
         <EditText style="@style/Base.Widget.AppCompat.EditText"
             android:layout_width="match_parent"

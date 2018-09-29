@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelectShopping">
+    tools:context="com.anhanguera.foodshopping.activity.SelectShopping">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:layout_gravity="center"
+            android:textSize="20dp"
             android:text="Escolha o Shopping" />
 
         <RadioGroup
@@ -42,6 +43,13 @@
                 tools:layout_editor_absoluteY="16dp" />
 
         </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginRight="5dp"
+            android:text="AVANÇAR" />
 
     </LinearLayout>
 

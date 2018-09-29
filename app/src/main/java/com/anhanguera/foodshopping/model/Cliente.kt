@@ -1,4 +1,4 @@
-package com.anhanguera.foodshopping
+package com.anhanguera.foodshopping.model
 
 data class Cliente (
         val id : Int?,
