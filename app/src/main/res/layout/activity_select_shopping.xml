@@ -23,6 +23,7 @@
             android:text="Escolha o Shopping" />
 
         <RadioGroup
+            android:id="@+id/shoppingGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -45,6 +46,7 @@
         </RadioGroup>
 
         <Button
+            android:id="@+id/nextButtonSelectShopping"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"

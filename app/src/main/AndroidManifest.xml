@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".activity.CadastroActivity" />
         <activity android:name=".activity.SelectShopping" />
-        <activity android:name=".activity.ResetarSenha"></activity>
+        <activity android:name=".activity.ResetarSenha" />
+        <activity android:name=".activity.ShoppingHome"></activity>
     </application>
 
 </manifest>

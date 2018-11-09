@@ -108,33 +108,35 @@ class LoginActivity : AppCompatActivity(){
 
     private fun logar(userLogin: String, userPassword: String) {
         AsyncTask.execute {
-            try {
-                val url = URL("${settings.SERVER_IP}:${settings.SERVER_PORT}/auth")
-                var urlConnect = url.openConnection() as HttpURLConnection
-                urlConnect.addRequestProperty("Content-Type", "application/json")
-                urlConnect.requestMethod = "POST"
-                urlConnect.doOutput = true
-
-                val parent = JSONObject()
-                parent.put("email",userLogin)
-                parent.put("password", userPassword)
-
-                val printStream = PrintStream(urlConnect.outputStream)
-                printStream.println(parent) //seta o que voce vai enviar
-                urlConnect.connect() //envia para o servidor
-                val response = urlConnect.responseCode
-                if (response ==200) {
-                    val intent = Intent(this, SelectShopping::class.java)
-                    startActivity(intent)
-                } else {
-                    runOnUiThread {
-                    Toast.makeText(applicationContext, "Usuário ou senha inválidos!", Toast.LENGTH_LONG).show()
-                    }
-                }
-
-            } catch (e: Exception) {
-                println(">>>>>>>>>>>>>>> $e")
-            }
+            val intent = Intent(this, SelectShopping::class.java)
+            startActivity(intent)
+//            try {
+//                val url = URL("${settings.SERVER_IP}:${settings.SERVER_PORT}/auth")
+//                var urlConnect = url.openConnection() as HttpURLConnection
+//                urlConnect.addRequestProperty("Content-Type", "application/json")
+//                urlConnect.requestMethod = "POST"
+//                urlConnect.doOutput = true
+//
+//                val parent = JSONObject()
+//                parent.put("email",userLogin)
+//                parent.put("password", userPassword)
+//
+//                val printStream = PrintStream(urlConnect.outputStream)
+//                printStream.println(parent) //seta o que voce vai enviar
+//                urlConnect.connect() //envia para o servidor
+//                val response = urlConnect.responseCode
+//                if (response ==200) {
+//                    val intent = Intent(this, SelectShopping::class.java)
+//                    startActivity(intent)
+//                } else {
+//                    runOnUiThread {
+//                    Toast.makeText(applicationContext, "Usuário ou senha inválidos!", Toast.LENGTH_LONG).show()
+//                    }
+//                }
+//
+//            } catch (e: Exception) {
+//                println(">>>>>>>>>>>>>>> $e")
+//            }
 
         }
     }
