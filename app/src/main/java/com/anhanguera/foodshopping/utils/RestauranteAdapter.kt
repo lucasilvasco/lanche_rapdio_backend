@@ -1,28 +1,32 @@
 package com.anhanguera.foodshopping.utils
 
+import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Context
+import android.graphics.drawable.Drawable
+import android.os.Build
+import android.support.annotation.RequiresApi
+import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.BaseAdapter
-import android.widget.TextView
+import android.widget.*
 import com.anhanguera.foodshopping.R
 import com.anhanguera.foodshopping.model.Restaurante
+import java.util.*
 
 class RestauranteAdapter(private var activity: Activity, private var items: ArrayList<Restaurante>) : BaseAdapter() {
     private class ViewHolder(row: View?) {
 
-        var txtName: TextView? = null
-        var txtSubtitle: TextView? = null
+        var restaurante: ImageView? = null
 
         init {
-            this.txtName = row?.findViewById(R.id.tvRestauranteName)
-            this.txtSubtitle = row?.findViewById(R.id.tvRestauranteSubTitle)
+            this.restaurante = row?.findViewById(R.id.logo_restaurante)
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view: View?
         val viewHolder: ViewHolder
@@ -38,8 +42,8 @@ class RestauranteAdapter(private var activity: Activity, private var items: Arra
         }
 
         var restauranteDto = items[position]
-        viewHolder.txtName?.text = restauranteDto.name
-        viewHolder.txtSubtitle?.text = restauranteDto.subtitle
+
+        viewHolder.restaurante?.background = ContextCompat.getDrawable(activity, restauranteDto.backgroundImage)
 
         return view as View
     }

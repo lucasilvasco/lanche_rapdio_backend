@@ -18,6 +18,8 @@ class SelectShopping : AppCompatActivity() {
     var shoppingGroup = findViewById<RadioGroup>(R.id.shoppingGroup)
     var nextButton = findViewById<Button>(R.id.nextButtonSelectShopping)
 
+        shoppingGroup.check(0)
+
         nextButton.setOnClickListener {
             var selectedId = shoppingGroup.checkedRadioButtonId
             var radioButtonSelected = findViewById<RadioButton>(selectedId)

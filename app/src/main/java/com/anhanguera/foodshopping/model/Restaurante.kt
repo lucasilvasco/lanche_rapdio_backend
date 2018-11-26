@@ -1,15 +1,18 @@
 package com.anhanguera.foodshopping.model
 
-import android.media.Image
+import android.graphics.drawable.Drawable
+import com.anhanguera.foodshopping.R
+
 
 class Restaurante{
 
     var name: String = ""
-    var subtitle: String = ""
+    var backgroundImage: Int = R.drawable.logo_circle
+    var cardapio: Cardapio = Cardapio()
 
     constructor(){}
-    constructor(name: String, subtitle: String){
+    constructor(name: String, backgroundImage: Int){
         this.name = name
-        this.subtitle = subtitle
+        this.backgroundImage = backgroundImage
     }
 }
