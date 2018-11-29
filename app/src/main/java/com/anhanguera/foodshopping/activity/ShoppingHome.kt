@@ -5,10 +5,16 @@ import android.graphics.drawable.Drawable
 import android.media.Image
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import com.anhanguera.foodshopping.R
 import com.anhanguera.foodshopping.model.Restaurante
 import com.anhanguera.foodshopping.utils.RestauranteAdapter
+import android.widget.Toast
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemClickListener
+
+
 
 class ShoppingHome : AppCompatActivity() {
 
@@ -23,18 +29,21 @@ class ShoppingHome : AppCompatActivity() {
         arrayList.add(Restaurante("Giraffas", R.drawable.logo_giraffas))
         arrayList.add(Restaurante("Mc Donalds", R.drawable.logo_mcdonalds))
         arrayList.add(Restaurante("Burguer King", R.drawable.logo_bk))
-        arrayList.add(Restaurante("Giraffas", R.drawable.logo_giraffas))
-        arrayList.add(Restaurante("Mc Donalds", R.drawable.logo_mcdonalds))
-        arrayList.add(Restaurante("Burguer King", R.drawable.logo_bk))
+
 
         var restaurantes = findViewById<GridView>(R.id.gvRestaurantes)
-        var adapter =  RestauranteAdapter(this, arrayList)
 
-        restaurantes.adapter = adapter
+        restaurantes.adapter = RestauranteAdapter(this, arrayList)
+        restaurantes.isFocusable = false
 
-        restaurantes.setOnItemClickListener { AdapterView, view, i, l ->
-            Toast.makeText(this, "teste", Toast.LENGTH_LONG).show()
+        restaurantes.onItemClickListener =   AdapterView.OnItemClickListener { parent, v, position, id ->
+            if(position == 0){
+                val intent = Intent(this, CardapioActivity::class.java)
+                startActivity(intent)
+
+            }
         }
+
     }
 }
 

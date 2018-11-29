@@ -30,8 +30,6 @@
                 android:horizontalSpacing="10dp"
                 android:stretchMode="columnWidth"
                 android:gravity="center"
-                android:clickable="true"
-                android:descendantFocusability="blocksDescendants"
                 />
 
 

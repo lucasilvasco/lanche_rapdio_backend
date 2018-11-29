@@ -2,22 +2,28 @@ package com.anhanguera.foodshopping.utils
 
 import android.app.Activity
 import android.content.Context
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.TextView
 import com.anhanguera.foodshopping.R
-import com.anhanguera.foodshopping.model.Restaurante
-import java.util.*
+import com.anhanguera.foodshopping.model.Prato
+import java.util.ArrayList
 
-class RestauranteAdapter(private var activity: Activity, private var items: ArrayList<Restaurante>) : BaseAdapter() {
+class CardapioAdapter(private var activity: Activity, private var items: ArrayList<Prato>) : BaseAdapter() {
     private class ViewHolder(row: View?) {
 
-        var restaurante: ImageView? = null
+        var pratoImage: ImageView? = null
+        var pratoName: TextView? = null
+        var pratoPreco: TextView? = null
 
         init {
-            this.restaurante = row?.findViewById(R.id.logo_restaurante)
+            this.pratoImage = row?.findViewById(R.id.pratoImage)
+            this.pratoName = row?.findViewById(R.id.pratoName)
+            this.pratoPreco = row?.findViewById(R.id.pratoPreco)
+
         }
     }
 
@@ -27,7 +33,7 @@ class RestauranteAdapter(private var activity: Activity, private var items: Arra
 
         if (convertView == null) {
             val inflater = activity?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            view = inflater.inflate(R.layout.item_list_restaurante, null)
+            view = inflater.inflate(R.layout.item_list_cardapio, null)
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder
         } else {
@@ -36,7 +42,10 @@ class RestauranteAdapter(private var activity: Activity, private var items: Arra
         }
 
         var restauranteDto = items[position]
-        viewHolder.restaurante?.setImageResource(restauranteDto.backgroundImage)
+        viewHolder.pratoImage?.setImageResource(restauranteDto.icon)
+        viewHolder.pratoName?.text = restauranteDto.name
+        viewHolder.pratoPreco?.text = restauranteDto.preco
+
 
         return view as View
     }
@@ -52,5 +61,4 @@ class RestauranteAdapter(private var activity: Activity, private var items: Arra
     override fun getCount(): Int {
         return items.size
     }
-
 }
